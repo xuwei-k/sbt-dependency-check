@@ -6,7 +6,7 @@
 
 package net.nmoncho.sbt.dependencycheck.settings
 
-import scala.jdk.CollectionConverters.asScalaSetConverter
+import scala.jdk.CollectionConverters.*
 
 import org.owasp.dependencycheck.dependency.Dependency
 import org.owasp.dependencycheck.dependency.Vulnerability

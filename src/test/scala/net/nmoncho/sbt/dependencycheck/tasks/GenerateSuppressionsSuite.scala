@@ -141,6 +141,10 @@ class GenerateSuppressionsSuite extends munit.FunSuite {
 
   private def attributedFile(path: String, gav: (String, String, String)): Attributed[File] =
     Attributed(new File(s"src/test/resources/$path"))(
-      AttributeMap(AttributeEntry(Keys.moduleID.key, ModuleID(gav._1, gav._1, gav._3)))
+      Map(
+        Keys.moduleIDStr -> sbt.Classpaths.moduleIdJsonKeyFormat.write(
+          ModuleID(gav._1, gav._1, gav._3)
+        )
+      )
     )
 }
